@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,80 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestAalianImage03" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="V6Z-Rc-l3t">
+                                <rect key="frame" x="43.5" y="373" width="288" height="39"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoB-i0-jbi">
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Pray"/>
+                                        <connections>
+                                            <action selector="btnPray:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9mm-4I-uCE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZd-dg-S0T">
+                                        <rect key="frame" x="114" y="0.0" width="58" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Pause"/>
+                                        <connections>
+                                            <action selector="btnPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xvO-ly-CQt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6m-Vg-Ie5">
+                                        <rect key="frame" x="243" y="0.0" width="45" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="btnStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Av-R8-KUz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="7Is-50-ELq"/>
+                                    <constraint firstAttribute="width" constant="288" id="AnB-Y1-mxk"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U3V-02-Lcb">
+                                <rect key="frame" x="67.5" y="60" width="240" height="263"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="CmY-k1-yaB"/>
+                                    <constraint firstAttribute="height" constant="263" id="evc-Z1-VX1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYl-Dq-yzn">
+                                <rect key="frame" x="182.5" y="432" width="10.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hG1-CG-yCm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vYl-Dq-yzn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JPF-0o-nqu"/>
+                            <constraint firstItem="V6Z-Rc-l3t" firstAttribute="top" secondItem="U3V-02-Lcb" secondAttribute="bottom" constant="50" id="QtR-Gk-pYn"/>
+                            <constraint firstItem="U3V-02-Lcb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Srp-PR-eeg"/>
+                            <constraint firstItem="U3V-02-Lcb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="g7d-jh-WgQ"/>
+                            <constraint firstItem="vYl-Dq-yzn" firstAttribute="top" secondItem="V6Z-Rc-l3t" secondAttribute="bottom" constant="20" id="wYa-hW-1pA"/>
+                            <constraint firstItem="V6Z-Rc-l3t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xBO-nW-8Jh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="alienImageView" destination="U3V-02-Lcb" id="sqj-r9-eTL"/>
+                        <outlet property="countLabel" destination="vYl-Dq-yzn" id="Tcb-qA-V4k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-82.400000000000006" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
